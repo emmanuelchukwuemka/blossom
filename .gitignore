@@ -1,0 +1,5 @@
+node_modules
+.env
+requests.rest
+database.sql
+dummy_sql_script.sql
