@@ -68,6 +68,9 @@ const favoriteRoute = require("./routes/favoriteRoutes/favoriteRoutes");
 const mainPetRoute = require("./routes/petRoutes/mainPetRoutes");
 const referralRoute = require("./routes/referralRoutes/referralRoutes");
 const requestRoute = require("./routes/requestRoutes/requestRoutes");
+const marketplaceRoute = require("./routes/marketplaceRoutes/marketplaceRoutes");
+const accountRoute = require("./routes/accountRoutes/accountRoutes");
+const profileRoute = require("./routes/profileRoutes/profileRoutes");
 
 
 
@@ -113,6 +116,9 @@ app.use("/api/v1", favoriteRoute);
 app.use("/api/v1", mainPetRoute);
 app.use("/api/v1", referralRoute);
 app.use("/api/v1", requestRoute);
+app.use("/api/v1", marketplaceRoute);
+app.use("/api/v1", accountRoute);
+app.use("/api/v1", profileRoute);
 
 
 

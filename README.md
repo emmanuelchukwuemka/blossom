@@ -1,6 +1,18 @@
-# bloomzon-server
+# Bloomzon Backend Server
 
-An Ecommerce app server built with My SQL, Express Js
+An E-commerce app server built with MySQL, Express.js
+
+## New Features Implemented
+
+Recent updates have added significant functionality to the platform:
+
+- **Marketplace System**: Complete buyer and seller center with dashboards, product management, order tracking, and analytics
+- **Multi-Account Management**: Ability to link and manage multiple accounts/IDs
+- **Enhanced Profile Management**: Profile verification, privacy controls, badges, and customization
+- **Secure Messaging**: Direct communication system between buyers and sellers
+- **Advanced Analytics**: Sales tracking and performance insights for sellers
+
+## Getting Started
 
 
 
