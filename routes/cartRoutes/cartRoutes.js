@@ -24,8 +24,21 @@ router.post("/upload-to-cart",(req,res)=>{
    
    db.query(sqlInsert,[id,user_id,title,prime,description,images,price,categoryId,sellerId,moq,video,countryId,stateId,colors,size,rating,quantity],(err,result)=>
    {
-     console.log("error",err);
+     if(err) {
+       console.log("error",err);
+       return res.status(500).json({
+         status: "error",
+         message: "Failed to add item to cart"
+       });
+     }
      console.log("result",result);
+     return res.status(200).json({
+       status: "success",
+       message: "Item added to cart successfully",
+       data: {
+         cartId: result.insertId
+       }
+     });
    });
 })
   
