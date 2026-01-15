@@ -53,7 +53,7 @@ const submitVote = asyncHandler(async (req, res) => {
     }
 
     // Check if the user exists in the users table
-    const checkUserQuery = 'SELECT id FROM users WHERE id = ?';
+    const checkUserQuery = 'SELECT id from Users WHERE id = ?';
     db.query(checkUserQuery, [user_id], (err, userResult) => {
         if (err) {
             console.error("Database error checking user:", err);

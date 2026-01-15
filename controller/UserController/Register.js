@@ -24,7 +24,7 @@ const register = asyncHandler(async (req, res) => {
     }
 
     // Check if the user exists
-    const q = 'SELECT * FROM users WHERE email = ?';
+    const q = 'SELECT * from Users WHERE email = ?';
     db.query(q, [email], async (err, userExists) => {
         if (err) return console.log(err);
         if (userExists[0]) return res.status(400).json({ status: "error", error: "User already exists, please login instead." });

@@ -8,7 +8,7 @@ const disableProduct = asyncHandler ( async (req,res)=>{
 
     const {productID,userID,passCode} = req.body
     console.log(userID)
-    let SQL = `SELECT * FROM users WHERE id=${userID}`;
+    let SQL = `SELECT * from Users WHERE id=${userID}`;
     db.query(SQL, (error,data)=>
     {
       if(error){

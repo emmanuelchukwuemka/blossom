@@ -10,7 +10,7 @@ const applyGiftCard = expressAsyncHandler(async (req, res) => {
   }
 
   // Check if the user exists
-  const checkUserSQL = "SELECT id FROM users WHERE id = ?";
+  const checkUserSQL = "SELECT id from Users WHERE id = ?";
   db.query(checkUserSQL, [userId], (err, userResults) => {
       if (err) {
           console.log(err);

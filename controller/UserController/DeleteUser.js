@@ -13,7 +13,7 @@ const deleteUser = asyncHandler(async (req, res, next) => {
     });
   }
 
-  const query = 'DELETE FROM users WHERE id = ?';
+  const query = 'DELETE from Users WHERE id = ?';
 
   db.query(query, [userId], (err, result) => {
     if (err) {

@@ -114,7 +114,7 @@ const deleteBanner= asyncHandler( async (req,res)=>{
     const {id,userID,passCode,image} = req.body
     console.log(userID)
 
-    const SQL = `SELECT * FROM users WHERE id=${userID}`;
+    const SQL = `SELECT * from Users WHERE id=${userID}`;
     db.query(SQL, (error,data)=>
     {
       if(error){

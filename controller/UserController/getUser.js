@@ -13,7 +13,7 @@ const getUser = asyncHandler(async (req, res) => {
         });
     }
 
-    const q = 'SELECT * FROM users WHERE id = ?';
+    const q = 'SELECT * from Users WHERE id = ?';
     db.query(q, [userId], (err, user) => {
         if (err) {
             // Handle database errors

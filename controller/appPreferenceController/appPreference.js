@@ -11,7 +11,7 @@ const updateAppPreference = asyncHandler(async (req, res) => {
     }
 
     // Check if the user exists
-    const userCheckQuery = 'SELECT id FROM users WHERE id = ?';
+    const userCheckQuery = 'SELECT id from Users WHERE id = ?';
     db.query(userCheckQuery, [user_id], (err, userResults) => {
         if (err) {
             return res.status(500).json({ message: "Error checking user existence", error: err });

@@ -20,7 +20,7 @@ const updateUser = asyncHandler(async (req, res) => {
     const userId = req.body.user_id || req.user.id; // Extract user ID from the request URL
     const { name, email, phone, passkey, password, two_step_verification_number, two_step_verification_code, two_step_verification } = req.body; // Extract fields from request body
 
-    const SQL = 'SELECT * FROM users WHERE id = ?';
+    const SQL = 'SELECT * from Users WHERE id = ?';
     db.query(SQL, [userId], async (err, result) => {
         if (err) {
             return res.status(500).json({
@@ -112,7 +112,7 @@ const updateUser = asyncHandler(async (req, res) => {
 
 const editProfile = asyncHandler(async (req, res) => {
   const { user_id, name, address, public_name, public_photo } = req.body;
-  const SQL_FETCH_USER = 'SELECT * FROM users WHERE id = ?';
+  const SQL_FETCH_USER = 'SELECT * from Users WHERE id = ?';
   db.query(SQL_FETCH_USER, [user_id], async (err, result) => {
     if (err) {
       return res.status(500).json({
@@ -181,7 +181,7 @@ const updatePassword = asyncHandler(async (req, res) => {
       return res.status(400).json({ message: "user_id, oldPassword, and newPassword are required" });
   }
 
-  const SQL = 'SELECT password FROM users WHERE id = ?';
+  const SQL = 'SELECT password from Users WHERE id = ?';
   db.query(SQL, [user_id], async (err, result) => {
       if (err) {
           return res.status(500).json({ message: "Something went wrong", error: err.message });
@@ -232,7 +232,7 @@ const updateZipCode = asyncHandler(async (req, res) => {
     return res.status(400).json({ message: "Invalid ZIP code format. Must be 6 digits." });
   }
 
-  const SQL_FETCH_USER = 'SELECT is_elite FROM users WHERE id = ?';
+  const SQL_FETCH_USER = 'SELECT is_elite from Users WHERE id = ?';
   db.query(SQL_FETCH_USER, [user_id], (err, result) => {
     if (err) {
       return res.status(500).json({

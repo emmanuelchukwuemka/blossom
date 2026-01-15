@@ -105,7 +105,7 @@ const placeOrderCart = asyncHandler(async (req, res) => {
                       res.status(500).send(`Database Error` + error);
                     } else if (result.length != 0) {
                       const id = result[0].user_id;
-                      const SQL = `SELECT * FROM users WHERE id= \'${id}\'`;
+                      const SQL = `SELECT * from Users WHERE id= \'${id}\'`;
                       console.log(`seller user_id  = ${id}`);
 
                       db.query(SQL, (error, result) => {
@@ -259,7 +259,7 @@ const placeOrderCart = asyncHandler(async (req, res) => {
                   res.status(500).send(`Database Error` + error);
                 } else if (result.length != 0) {
                   const id = result[0].user_id;
-                  const SQL = `SELECT * FROM users WHERE id= \'${id}\'`;
+                  const SQL = `SELECT * from Users WHERE id= \'${id}\'`;
                   console.log(`seller user_id  = ${id}`);
 
                   db.query(SQL, (error, result) => {
@@ -372,7 +372,7 @@ const orders = asyncHandler(async (req, res) => {
 
   if (AdminOrders === "yes") {
     // Query to check if the user is an admin in the Staff table
-    const checkAdminSQL = `SELECT * FROM users WHERE id = ? AND user_type = 'staff'`;
+    const checkAdminSQL = `SELECT * from Users WHERE id = ? AND user_type = 'staff'`;
     db.query(checkAdminSQL, [userID], (error, adminResult) => {
       if (error) {
         console.error("Error checking admin status:", error);
@@ -631,7 +631,7 @@ const orderDetails = asyncHandler(async (req, res) => {
     } else if (data.length != 0) {
       order = data;
     }
-    const SQL = `SELECT * FROM users WHERE id=${userID}`;
+    const SQL = `SELECT * from Users WHERE id=${userID}`;
     db.query(SQL, (error, data) => {
       if (error) {
         console.error(error);

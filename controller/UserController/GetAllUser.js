@@ -3,7 +3,7 @@ const db = require('../../Database/db');
 
 // Get All USERS
 const getAllUsers = asyncHandler(async (req, res) => {
-    const userQuery = 'SELECT * FROM users';
+    const userQuery = 'SELECT * from Users';
 
     
     try {

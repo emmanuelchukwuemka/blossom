@@ -11,7 +11,7 @@ const garageDelivery = expressAsyncHandler(async (req, res) => {
   }
 
   // Verify if the user exists
-  const userCheckSQL = `SELECT id FROM users WHERE id = ?`;
+  const userCheckSQL = `SELECT id from Users WHERE id = ?`;
   db.query(userCheckSQL, [userId], (userErr, userResults) => {
     if (userErr) {
       console.error("Database error:", userErr);

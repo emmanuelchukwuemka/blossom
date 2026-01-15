@@ -17,7 +17,7 @@ const addAddress = asyncHandler(async (req, res) => {
   const userId = req.body.user_id || req.user.id;
 
   // Step 1: Check if the user exists
-  const checkUserSQL = `SELECT id FROM users WHERE id = ?`;
+  const checkUserSQL = `SELECT id from Users WHERE id = ?`;
   db.query(checkUserSQL, [userId], (err, userResult) => {
     if (err) {
       console.error(err);

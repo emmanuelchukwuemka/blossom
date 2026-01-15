@@ -14,7 +14,7 @@ const verifyUser = asyncHandler(async (req, res) => {
     }
 
     // Check the database for the token
-    const query = 'SELECT * FROM users WHERE verification_code = ? LIMIT 1';
+    const query = 'SELECT * from Users WHERE verification_code = ? LIMIT 1';
     db.query(query, [verificationToken], async (err, results) => {
         if (err) {
             return res.status(500).json({

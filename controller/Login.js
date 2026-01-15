@@ -14,7 +14,7 @@ const loginUser = asyncHandler(async (req, res) => {
     }
 
     // Query to find user by email
-    const q = 'SELECT * FROM users WHERE email = ?';
+    const q = 'SELECT * from Users WHERE email = ?';
     db.query(q, [email], async (err, result) => {
         if (err) {
             return res.status(500).json({ message: "Server error" });

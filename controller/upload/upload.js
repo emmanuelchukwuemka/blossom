@@ -59,7 +59,7 @@ const createUpload = async (file) =>{
        console.log(img[0]);
        const objectData = img[0]
        console.log(user_id)
-       const SQL = `SELECT avatar from users WHERE id=${user_id}`
+       const SQL = `SELECT avatar from Users WHERE id=${user_id}`
        db.query(SQL,async (error, result) => {
          if(error){
             console.log(error)

@@ -14,7 +14,7 @@ const getAccounts = expressAsyncHandler(async (req, res) => {
     UNION
     SELECT u.id as id, 'main' as account_type, u.name as display_name, 
            u.email, u.status, u.created_at, u.updated_at
-    FROM users u
+    from Users u
     WHERE u.id = ?
   `;
 

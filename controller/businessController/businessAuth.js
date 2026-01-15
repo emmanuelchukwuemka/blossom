@@ -27,7 +27,7 @@ const registerBusiness = asyncHandler(async (req, res) => {
     }
 
     // Check if user_id exists
-    const checkUserSQL = `SELECT id FROM users WHERE id = ?`;
+    const checkUserSQL = `SELECT id from Users WHERE id = ?`;
     db.query(checkUserSQL, [user_id], (err, userResult) => {
         if (err) {
             console.error("Database error during user ID check:", err);

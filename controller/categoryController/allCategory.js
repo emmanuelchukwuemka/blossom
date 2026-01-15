@@ -215,7 +215,7 @@ const deleteCategory= asyncHandler( async (req,res)=>{
     const {id,userID,passCode} = req.body
     console.log(userID)
 
-    const SQL = `SELECT * FROM users WHERE id=${userID}`;
+    const SQL = `SELECT * from Users WHERE id=${userID}`;
     db.query(SQL, (error,data)=>
     {
       if(error){
@@ -261,7 +261,7 @@ const deleteTitleCategory = asyncHandler( async (req,res)=>{
   const {id,userID,passCode} = req.body
   console.log(userID)
 
-  const SQL = `SELECT * FROM users WHERE id=${userID}`;
+  const SQL = `SELECT * from Users WHERE id=${userID}`;
   db.query(SQL, (error,data)=>
   {
     if(error){
@@ -647,7 +647,7 @@ const deleteDeal = asyncHandler( async (req,res)=>{
   const {id,userID,passCode} = req.body
   console.log(userID)
 
-  const SQL = `SELECT * FROM users WHERE id=${userID}`;
+  const SQL = `SELECT * from Users WHERE id=${userID}`;
   db.query(SQL, (error,data)=>
   {
     if(error){

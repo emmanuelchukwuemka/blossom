@@ -11,7 +11,7 @@ const useReferralCode = asyncHandler(async (req, res) => {
     }
 
     // Check if referral code is valid
-    const SQL_GET_REFERRER = `SELECT id FROM users WHERE referral_code = ?`;
+    const SQL_GET_REFERRER = `SELECT id from Users WHERE referral_code = ?`;
     db.query(SQL_GET_REFERRER, [referralCode], (err, referrerResults) => {
         if (err) {
             return res.status(500).json({ message: "Error checking referral code.", error: err.message });
@@ -23,7 +23,7 @@ const useReferralCode = asyncHandler(async (req, res) => {
         const referrerId = referrerResults[0].id;
 
         // Ensure referral code is not used by the same user
-        const SQL_CHECK_ALREADY_REFERRED = `SELECT * FROM users WHERE referred_by = ? AND id = ?`;
+        const SQL_CHECK_ALREADY_REFERRED = `SELECT * from Users WHERE referred_by = ? AND id = ?`;
         db.query(SQL_CHECK_ALREADY_REFERRED, [referrerId, userId], (err, referredResults) => {
             if (err) {
                 return res.status(500).json({ message: "Error checking referral usage.", error: err.message });
@@ -85,7 +85,7 @@ const generateReferralCode = asyncHandler(async (req, res) => {
     }
 
     // SQL to check if referral code exists
-    const SQL_CHECK_REFERRAL_CODE = `SELECT referral_code FROM users WHERE id = ?`;
+    const SQL_CHECK_REFERRAL_CODE = `SELECT referral_code from Users WHERE id = ?`;
 
     db.query(SQL_CHECK_REFERRAL_CODE, [userId], (err, results) => {
         if (err) {
