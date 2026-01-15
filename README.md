@@ -1,59 +1,72 @@
-# Bloomzon Backend Server
+# Bloomzon Backend
 
-An E-commerce app server built with MySQL, Express.js
+## Project Overview
 
-## New Features Implemented
+Bloomzon is a comprehensive e-commerce platform backend built with Node.js, Express, and MySQL.
 
-Recent updates have added significant functionality to the platform:
+## Features
 
-- **Marketplace System**: Complete buyer and seller center with dashboards, product management, order tracking, and analytics
-- **Multi-Account Management**: Ability to link and manage multiple accounts/IDs
-- **Enhanced Profile Management**: Profile verification, privacy controls, badges, and customization
-- **Secure Messaging**: Direct communication system between buyers and sellers
-- **Advanced Analytics**: Sales tracking and performance insights for sellers
+- User Authentication & Management
+- Product Catalog & Management
+- Shopping Cart & Wishlist
+- Order Processing
+- Payment Integration
+- Notification System
+- Reviews & Ratings
+- Admin Dashboard
 
-## Getting Started
+## Tech Stack
 
+- Node.js
+- Express.js
+- MySQL
+- Cloudinary (for image uploads)
+- JWT (for authentication)
+- Stripe (for payments)
 
+## Deployment for Render
 
-# How to run the app locally in 5 steps
+This project is configured for deployment on Render. See `README_RENDER.md` for detailed instructions.
 
-#### step 1; Create a .env file and copy the contents of .env.example to it'
+## Environment Variables
 
+The application requires the following environment variables:
 
-#### step 2; get the values of the .env from your personal accounts and update your .env with it
+- `PORT`: Port number for the server (provided by Render)
+- `DB_HOST`: Database host
+- `DB_USER`: Database username
+- `DB_PASS`: Database password
+- `DB_NAME`: Database name
+- `JWT_SECRET`: Secret key for JWT tokens
+- `EMAIL_USER`: Email address for sending emails
+- `EMAIL_HOST`: SMTP host
+- `EMAIL_PASSWORD`: SMTP password
+- `EMAIL_PORT`: SMTP port
+- `NODE_ENV`: Environment (development/production)
+- `CRYPTER_KEY`: Encryption key
+- `cloudinaryName`: Cloudinary cloud name
+- `cloudinaryAPI_KEY`: Cloudinary API key
+- `cloudinaryAPI_SECRET`: Cloudinary API secret
 
+## Local Development
 
-#### step 3; Install dependencies with 'npm install'
-``` bash
-npm install
-```
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up environment variables in `.env`
+4. Run the application: `npm run dev`
 
+## Deployment
 
-#### step 4; Run your webapp in the terminal with 'npm start'
-``` bash
-npm start
-```
-#### step 5; visit the app locally on your browser at localhost:5001/api
-http://localhost:5001/api/v1
-#### or in production at:
-https://bloomzon-server.vercel.app/api/v1
+This project can be deployed to various platforms including Render, Heroku, or AWS.
 
+## API Endpoints
 
+All API endpoints are prefixed with `/api/v1`.
 
-## Build Setup
+## Render Deployment Configuration
 
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:5001
-# http://localhost:5001/api/v1
-npm run start
-
-# alternatively
-npm start
-
-```
-
-# bloomzon-server
+This project includes:
+- `render.yaml` - Render deployment configuration
+- `Dockerfile` - Containerization for Render deployment
+- Updated `package.json` with proper start command for production
+- Proper PORT handling for Render environment

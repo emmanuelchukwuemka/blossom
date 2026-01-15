@@ -130,6 +130,11 @@ app.get("/api/v1", (req, res) => {
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
+
+// Health check endpoint for Render
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'OK', timestamp: new Date().toISOString() });
+});
 app.use((req, res, next) => {
   res.status(404).json({
       status: "fail",
@@ -143,10 +148,18 @@ app.use((req, res, next) => {
 // Error middleware
 app.use(errorHandler);
 
-const PORT = 5001 || process.env.PORT;
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (err, promise) => {
+  console.log(`Error: ${err.message}`);
+  // Close server & exit process
+  // Comment out during development to avoid restarts
+  // server.close(() => process.exit(1));
+});
+
+const PORT = process.env.PORT || 5001;
 
 app.listen(PORT, () => {
-  console.log(`App is Running on port ${5001 || process.env.PORT}`);
+  console.log(`App is Running on port ${PORT}`);
   db.connect((err) => {
     if (err) {
       console.log(err);
